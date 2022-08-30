@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('http://fonts.cdnfonts.com/css/maximum-impact');
+
+
+#board {
+    border-radius: 5px;
+    left: 20%;
+}
+
+#game-bg {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://opengameart.org/sites/default/files/bg_02_h.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size:cover;
+
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.textBlock {
+    color: #131313;
+    font-family: 'Maximum Impact', sans-serif;
+    z-index: 99;
+    position: relative;
+    text-align: center;
+    width: 50px;
+    padding-top: 16px;
+    height: 50px;
+    font-size: 1.2rem;
+    top: -16px;
+    font-weight: 700;
+}
+
+#block {
+    z-index: 2;
+}
+
+$x: 70%;
+.score {
+    background: #080917;
+    border-radius: 5px;
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    min-height: 70px;
+
+    left: calc($x - calc(30% / 2));
+
+    color: #ddd;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+    line-height: 70px;
+
+    &::selection {
+        color: #080917;
+        background: #ddd;
+    }
+}
+
+.will-see {
+    background: #080917;
+    border-radius: 5px;
+    width: 18%;
+    position: absolute;
+    height: 370px;
+
+    top: calc(50% - calc(370px / 2));
+    // bottom: 15%;
+    
+    left: calc($x - calc(30% / 2));
+
+    padding-left: 2%;
+    color: #ddd;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 80px;
+}
+
+.will-see h3 {
+    top: -55px;
+    right: 0;
+    left: 0;
+    padding-left: 15px;
+    min-width: 24.5%;
+    background: #080917;
+    border-radius: 5px;
+    position: absolute;
+
+    &::selection {
+        color: #080917;
+        background: #ddd;
+    }
+}
+
+ul, li {
+    text-align: left;
+    margin-bottom: -15px;
+    &::selection {
+        color: #080917;
+        background: #ddd;
+    }
+}
+
+.wrapper-game {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: relative;
+}
+
+.buttons {
+    position: absolute;
+    background: #080917;
+    left: calc($x - calc(30% / 2));
+    border-radius: 5px;
+    width: 20%;
+    bottom: 10%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons img {
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    transform: scale(0.5);
+
+    &:hover {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .score {
+        width: 90%;
+        left: 5%;
+        top: 2%;
+        z-index: 3;
+    }
+
+    #board {
+        border-radius: 5px;
+        top: 15% !important;
+        left: 2.5%;
+        width: 65% !important;
+        height: 70% !important;
+    }
+
+    .buttons {
+        bottom: 2%;
+        width: 75%;
+        left: calc(50% - calc(75% / 2));
+    }
+
+    .will-see {
+        width: 28%;
+        position: absolute;
+        left: 70%;
+        padding-left: 0%;
+        line-height: 20px;
+
+        h3 {
+            padding-top: 8%;
+            font-size: 1.1rem;
+        }
+    }
+    ul, li {
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+        &::selection {
+            color: #080917;
+            background: #ddd;
+        }
+    }
+}
